@@ -61,6 +61,17 @@ export class HomeComponent implements OnInit {
         });
     }
 
+    addCourse() {
+        const newClass: CourseWithTNDto = {
+            courseName: (document.getElementById('name') as HTMLInputElement).value,
+            courseLocation: (document.getElementById('location') as HTMLInputElement).value,
+            courseContent: (document.getElementById('content') as HTMLInputElement).value,
+            teacherName: (document.getElementById('teacher') as HTMLInputElement).value
+        };
+        debugger;
+        this.courseService.addCourse(newClass).subscribe();
+    }
+
     getAllCoursesWithTN() {
         this.courseService.getCourseInfoWithTN().subscribe(curDto => {
             if (!curDto) {

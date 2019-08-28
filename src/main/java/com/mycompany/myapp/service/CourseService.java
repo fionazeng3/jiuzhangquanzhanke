@@ -70,7 +70,7 @@ public class CourseService {
         }
     }
 
-    public void addCourse(CourseDto course) throws Exception{
+    public void addCourse(CourseWithTNDto course) throws Exception{
         Optional<Course> courseDto = courseRepository.findCourseByCourseName(course.getCourseName());
 
         if(courseDto.isPresent()){
@@ -81,7 +81,7 @@ public class CourseService {
             .courseName(course.getCourseName())
             .courseContent(course.getCourseContent())
             .courseLocation(course.getCourseContent())
-            .teacherId(course.getTeacherId())
+            .teacherId(Long.parseLong(course.getTeacherName()))
             .build();
 
         try {

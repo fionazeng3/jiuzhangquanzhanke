@@ -53,6 +53,28 @@
             </div>
         </div>
 
+        <div *ngIf="isAuthenticated()">
+            <hr>
+            <span>添加课程</span>
+            <hr>
+            <div>
+                <form>
+                    Course Name
+                    <input type="text" id="name">
+                    Course Location
+                    <input type="text" id="location">
+                    Course Content
+                    <input type="text" id="content">
+                    Teacher Name
+                    <input type="text" id="teacher">
+                </form>
+                <button (click)="addCourse()">添加</button>
+            </div>
+
+            </div>
+        </div>
+
+
         <!--<div *ngIf="isAuthenticated()">-->
             <!--<hr>-->
             <!--<span>注册功能</span>-->
